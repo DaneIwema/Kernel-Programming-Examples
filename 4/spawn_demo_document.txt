@@ -1,0 +1,6 @@
+This program aims to create a new process that will call a completely different process image to overwrite
+    the current process image. The way the program does this is with a helper function called spawn. this will 
+    fork the program and create the child process, and after that it will check if its the child process and
+    run th execvp function. This is the function used to replace the process image with a specified file.
+    here we give it a list of arguments to call. ls is the process image we want to replace with the program
+    in the child, and the arg_list is the list builds the argument vector to be called at the command line.

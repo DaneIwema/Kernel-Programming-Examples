@@ -1,0 +1,18 @@
+Created By Dane Iwema
+
+fork() is a way of multiprocessing in linux, using fork you can create a child process where
+    everything from the parent process is copied into the child, all the memory the parent had
+    stored at the time of execution. This data, when altered, does not effect the parent proccess
+    since it is a deep copy and completely seperate. fork() also has several return values, at the
+    start of the parent process the pid of the child that was created is returned, but inside the child
+    proccess the start of the process is right where the parent left off, and if you are storing the return
+    value then in the child process 0 is returned even though fork() is not actaully called at the
+    start of the child process. 
+
+execlp() is a way of executing a new program in the child instead of the parents code, the p 
+    means it will take a path so that you do not need the program in the same file unlike execl().
+    This will execute the given program in the current process that sees it. If it was unable
+    to switch context to this new program then it will return -1.
+
+wait() is used to pause a parent process untill a child process finishes its process, an int pointer
+    can be passed to receive the exit status of the child, or use NULL if you don't care.
